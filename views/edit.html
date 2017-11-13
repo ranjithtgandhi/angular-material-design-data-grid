@@ -1,0 +1,66 @@
+<md-content layout-padding>
+      <form name="userForm" novalidate="novalidate">        
+        <div layout-gt-sm="row" layout-align="space-between center">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>First name</label>
+            <input ng-model="firstName" name="firstName" placeholder="First name"
+                   required>
+             <div ng-messages="userForm.firstName.$error" ng-if="!showHints">
+              <div ng-message="required" >Please Enter First name</div>
+            </div>
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Last Name</label>
+            <input ng-model="lastName" name="lastName"  placeholder="Last name"
+                   required>
+             <div ng-messages="userForm.lastName.$error" ng-if="!showHints">
+              <div ng-message="required" >Please Enter Last name</div>
+            </div>
+          </md-input-container>
+        </div> 
+        <div layout-gt-sm="row">  
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Age</label>
+            <input name="age" ng-model="age" placeholder="Age"
+                   required ng-pattern="/^[0-9]*$/">
+            <div ng-messages="userForm.age.$error" ng-if="!showHints">
+              <div ng-message="required" >Please Enter Age</div>
+              <div ng-message="pattern" >Please Enter Only Numbers</div>
+            </div>
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Employer</label>
+            <input name="employer" ng-model="employer" placeholder="Employer"
+                   required>
+            <div ng-messages="userForm.employer.$error" ng-if="!showHints">
+              <div ng-message="required" >Please Enter Employer</div>
+            </div>
+          </md-input-container>
+        </div>       
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+         <md-datepicker name="joiningDate" ng-model="joiningDate" md-placeholder="Joining Date" required onkeydown="return false"></md-datepicker>
+         
+            <div class="validation-messages" ng-messages="userForm.joiningDate.$error" ng-if="!showHints">
+              <div ng-message="required">This date is required!</div>
+            </div>
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Location</label>
+            <input name="location" ng-model="location" placeholder="Location"
+                   required>
+            <div ng-messages="userForm.location.$error" ng-if="!showHints">
+              <div ng-message="required" >Please Enter Location</div>
+            </div>
+          </md-input-container>
+          
+          
+        </div>
+        <md-dialog-actions layout="row" layout-wrap>
+            <md-button class="md-raised md-warn"  ng-click="closeDialog()"  >Cancel</md-button>
+            <md-button type="submit" class="md-raised md-primary"  ng-click="userForm.$valid && updateEmployee(uid)"   >Update</md-button>
+            
+         </md-dialog-actions>
+        
+      </form>
+</md-content>
