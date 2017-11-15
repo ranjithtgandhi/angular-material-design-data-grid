@@ -5,18 +5,14 @@
     .controller('mainCtrl', function($scope,getData,$mdDialog,$state) {
 
 
-      /*$scope.shortType = "id";
-      $scope.shortOrder = false;*/
       $scope.sort=function(keyname){
           $scope.sortBy=keyname;
           $scope.reverse=!$scope.reverse;
       };
-        
       $scope.employees = getData.getEmployees();
       console.log($scope.employees);
 
       $scope.itemsPerPage = 4;
-      
 
       /*$scope.searchTxt   = '';
       $scope.keyupFilter = function(val){

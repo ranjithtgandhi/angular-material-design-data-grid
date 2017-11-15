@@ -1,6 +1,7 @@
 (function() {
  'use strict';
 
+
 	angular.module('mainApp', ["ui.router",'ui.bootstrap','angularUtils.directives.dirPagination','ngMaterial',"ngMessages","mainControllers","mainServices"])
 	.config(function($stateProvider, $urlRouterProvider) {	 	
 	 	
